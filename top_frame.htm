@@ -1,0 +1,173 @@
+<!---版權宣告必須保留 --->
+<!--Shinobu's BGM Player 1.5 HTML File-->
+<!--Copyleft (C) 2000 - 2001 by Shinobu All Rights Unreversed-->
+<!--中文化 : Cora - E-mail: wait4mayday@hotmail.com-->
+
+<!--程式修改 : Sharon-->
+<!--E - mail : forsharon@hotmail.com-->
+<!--網站網址 : http://sharon.has.it-->
+
+
+<html>
+<head>
+<title>無標題文件</title>
+<meta name="generator" content="Microsoft FrontPage 5.0">
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<!--BGM Script Includes-->
+<script LANGUAGE=javascript src="bgm_system.js">
+</script>
+<script language=Javascript>
+//選擇歌曲播放形式
+//0 -> 按照歌曲排列順序播放
+//1 -> 隨機播放
+var playMode = 1;
+
+
+//每首歌之間的休息時間(秒)
+var restLength = 3;
+
+
+
+//是否顯示歌曲名稱
+var showTitle = 1;
+
+
+//是否歌曲一載入就自動播放
+var doFirstPlay = 1;
+
+//以下是連結歌曲URL語法(可增加/減少, 但每首歌的播放時間數字一定不能相同)
+//歌曲類型最好是 WMA MIDI & ASF !
+//addbgm('歌曲連結位置 ', '歌手 - 歌曲名稱', 播放時間數字[以秒為單位]); 
+//(例如) addbgm('http://www.server.com/folder/file.wma','Artist - Title',123);
+addbgm('http://myweb.hinet.net/home6/sm917/jay2.wma',' 周杰倫 - reMix - 完美范特西',502);
+addbgm('http://myweb.hinet.net/home6/sm917/jay3.wma',' 周杰倫 - reMix - 誰叫我是周杰倫',378);
+addbgm('http://61.136.202.56/mp3/jay101.mp3',' 周杰倫 - 以父之名',157);
+addbgm('http://61.136.202.56/mp3/jay102.mp3',' 周杰倫 - 懦夫',125);
+addbgm('http://61.136.202.56/mp3/jay103.mp3',' 周杰倫 - 晴天',137);
+addbgm('http://61.136.202.56/mp3/jay104.mp3',' 周杰倫 - 三年二班',131);
+addbgm('http://61.136.202.56/mp3/jay105.mp3',' 周杰倫 - 東風破',138);
+addbgm('http://61.136.202.56/mp3/jay107.mp3',' 周杰倫 - 她的睫毛',108);
+addbgm('http://61.136.202.56/mp3/jay109.mp3',' 周杰倫 - 梯田',288);
+addbgm('http://fun.online.tj.cn/content/music2001/jay/0301.mp3',' 周杰倫 - 半獸人',245);
+addbgm('http://fun.online.tj.cn/content/music2001/jay/0302.mp3',' 周杰倫 - 半島鐵盒',317);
+addbgm('http://fun.online.tj.cn/content/music2001/jay/0303.mp3',' 周杰倫 - 暗號',270);
+addbgm('http://fun.online.tj.cn/content/music2001/jay/0304.mp3',' 周杰倫 - 龍拳',273);
+addbgm('http://fun.online.tj.cn/content/music2001/jay/0305.mp3',' 周杰倫 - 火車叨位去',274);
+addbgm('http://fun.online.tj.cn/content/music2001/jay/0306.mp3',' 周杰倫 - 分裂',253);
+addbgm('http://fun.online.tj.cn/content/music2001/jay/0307.mp3',' 周杰倫 - 爺爺泡ㄉ茶',239);
+addbgm('http://fun.online.tj.cn/content/music2001/jay/0308.mp3',' 周杰倫 - 回到過去',232);
+addbgm('http://fun.online.tj.cn/content/music2001/jay/0309.mp3',' 周杰倫 - 米蘭ㄉ小鐵匠',238);
+addbgm('http://fun.online.tj.cn/content/music2001/jay/0310.mp3',' 周杰倫 - 最後ㄉ戰役',251);
+addbgm('http://fun.online.tj.cn/content/music2001/jay/0201.mp3',' 周杰倫 - 愛在西元前',234);
+addbgm('http://fun.online.tj.cn/content/music2001/jay/0202.mp3',' 周杰倫 - 爸我回來ㄌ',236);
+addbgm('http://fun.online.tj.cn/content/music2001/jay/0203.mp3',' 周杰倫 - 簡單愛',271);
+addbgm('http://fun.online.tj.cn/content/music2001/jay/0204.mp3',' 周杰倫 - 忍者',159);
+addbgm('http://fun.online.tj.cn/content/music2001/jay/0205.mp3',' 周杰倫 - 開不了口',292);
+addbgm('http://fun.online.tj.cn/content/music2001/jay/0206.mp3',' 周杰倫 - 上海一九四三',196);
+addbgm('http://fun.online.tj.cn/content/music2001/jay/0207.mp3',' 周杰倫 - 對不起',225);
+addbgm('http://fun.online.tj.cn/content/music2001/jay/0208.mp3',' 周杰倫 - 威廉古堡',228);
+addbgm('http://fun.online.tj.cn/content/music2001/jay/0209.mp3',' 周杰倫 - 雙結棍',190);
+addbgm('http://fun.online.tj.cn/content/music2001/jay/0210.mp3',' 周杰倫 - 安靜',334);
+addbgm('http://yanzizone.com/online/whole-heratedness.wma',' 孫燕姿 - 全心全意(中文版)',174);
+addbgm('http://yanzizone.com/online/one-united-people.wma',' 孫燕姿 - 全心全意(英文版)',168);
+addbgm('http://hk.geocities.com/dc_evonne/Ayu_new-01.mp3',' 濱崎步 - Angels Song',289);
+addbgm('http://hk.geocities.com/dc_evonne/Ayu_new-02.mp3',' 濱崎步 - Greatful Days',280);
+addbgm('http://hk.geocities.com/dc_evonne/Ayu_new-03.mp3',' 濱崎步 - Because Of You',322);
+addbgm('http://www.jm160.com/jm1603/music/com/music/ljy/a01.mp3',' 梁靜茹 - Fly Away',264);
+addbgm('http://www.jm160.com/jm1603/music/com/music/ljy/a02.mp3',' 梁靜茹 - 聽不到',237);
+addbgm('http://www.jm160.com/jm1603/music/com/music/ljy/a03.mp3',' 梁靜茹 - TIFFANY',244);
+addbgm('http://www.jm160.com/jm1603/music/com/music/ljy/a04.mp3',' 梁靜茹 - 愛是......',263);
+addbgm('http://www.jm160.com/jm1603/music/com/music/ljy/a05.mp3',' 梁靜茹 - 一夜長大',268);
+addbgm('http://www.jm160.com/jm1603/music/com/music/ljy/a06.mp3',' 梁靜茹 - 勇氣',240);
+addbgm('http://www.jm160.com/jm1603/music/com/music/ljy/a07.mp3',' 梁靜茹 - 無條件為你',263);
+addbgm('http://www.jm160.com/jm1603/music/com/music/ljy/a08.mp3',' 梁靜茹 - 分手快樂',276);
+addbgm('http://www.jm160.com/jm1603/music/com/music/ljy/a09.mp3',' 梁靜茹 - 我喜歡',290);
+addbgm('http://www.jm160.com/jm1603/music/com/music/ljy/a10.mp3',' 梁靜茹 - 為我好',232);
+addbgm('http://www.jm160.com/jm1603/music/com/music/ljy/b01.mp3',' 梁靜茹 - 不想睡',307);
+addbgm('http://www.jm160.com/jm1603/music/com/music/ljy/b02.mp3',' 梁靜茹 - 如果有一天',279);
+addbgm('http://www.jm160.com/jm1603/music/com/music/ljy/b03.mp3',' 梁靜茹 - 彩虹',303);
+addbgm('http://www.jm160.com/jm1603/music/com/music/ljy/b04.mp3',' 梁靜茹 - 愛你不是兩三天',297);
+addbgm('http://www.jm160.com/jm1603/music/com/music/ljy/b05.mp3',' 梁靜茹 - 最想環遊的世界',281);
+addbgm('http://www.jm160.com/jm1603/music/com/music/ljy/b06.mp3',' 梁靜茹 - 對不起我愛你',277);
+addbgm('http://www.jm160.com/jm1603/music/com/music/ljy/b07.mp3',' 梁靜茹 - 只能抱著你',292);
+addbgm('http://www.jm160.com/jm1603/music/com/music/ljy/b08.mp3',' 梁靜茹 - 第三者',233);
+addbgm('http://www.jm160.com/jm1603/music/com/music/ljy/b09.mp3',' 梁靜茹 - 昨天',243);
+addbgm('http://www.jm160.com/jm1603/music/com/music/ljy/b10.mp3',' 梁靜茹 - 明天的微笑',289);
+
+</script>
+<!--End script-->
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+//-->
+</script>
+<body background="images/ban.jpg" OnLoad="init_bgm()">
+
+<div id="Layer1" style="position:absolute; left:670px; top:-15; width:296px; height:28px; z-index:1"> 
+  <!--BGM Script BODY Start--><form name="form1">
+  <p>
+<!--BGM Script BODY Start-->
+<form name="form1">
+<p>
+<!--以下語法最好不要修改-->
+<object classid="clsid:22D6F312-B0F6-11D0-94AB-0080C74C7E95" width="1" height="1" vspace="1" hspace="1" align="middle" id="Music" style="left:0px; top:0px;">
+<param name="AllowChangeDisplaySize" value="true">
+<param name="AllowScan" value="true">
+<param name="AnimationAtStart" value="true">
+<param name="AudioStream" value="-1">
+<param name="AutoRewind" value="true">
+<param name="AutoSize" value="false">
+<param name="AutoStart" value="true">
+<param name="Balance" value="0">
+<param name="BufferingTime" value="5">
+<param name="ClickToPlay" value="true">
+<param name="CurrentMarker" value="0">
+<param name="CurrentPosition" value="-1">
+<param name="CursorType" value="0">
+<param name="DisplayBackColor" value="0">
+<param name="DisplayForeColor" value="16777215">
+<param name="DisplayMode" value="0">
+<param name="DisplaySize" value="2">
+<param name="EnableContextMenu" value="true">
+<param name="Enabled" value="true">
+<param name="EnableFullScreenControls" value="false">
+<param name="EnablePositionControls" value="true">
+<param name="EnableTracker" value="true">
+<param name="InvokeURLs" value="true">
+<param name="Language" value="-1">
+<param name="Mute" value="false">
+<param name="PlayCount" value="1">
+<param name="PreviewMode" value="false">
+<param name="Rate" value="1">
+<param name="SelectionEnd" value="-1">
+<param name="SelectionStart" value="-1">
+<param name="SendErrorEvents" value="true">
+<param name="SendKeyboardEvents" value="false">
+<param name="SendMouseClickEvents" value="true">
+<param name="SendMouseMoveEvents" value="false">
+<param name="SendOpenStateChangeEvents" value="true">
+<param name="SendPlayStateChangeEvents" value="true">
+<param name="SendWarningEvents" value="true">
+<param name="ShowAudioControls" value="true">
+<param name="ShowCaptioning" value="false">
+<param name="ShowControls" value="true">
+<param name="ShowDisplay" value="false">
+<param name="ShowGotoBar" value="false">
+<param name??※敲>???????捲?汰祡朮??????9??????????????????????????="ShowPositionControls" value="true">
+<param name="ShowStatusBar" value="true">
+<param name="ShowTracker" value="true">
+<param name="TransparentAtStart" value="false">
+<param name="VideoBorder3D" value="true">
+<param name="VideoBorderColor" value="0">
+<param name="VideoBorderWidth" value="0">
+<param name="Volume" value="2000">
+<param name="WindowlessVideo" value="false"></object><P Align=center><span style="font-size:9pt;"> <font color="white"><input type="text" name="stitle" size="30" value="Shinobu BGM Player 1.5 [ready]" style="font-family:新細明體,sans-serif; font-size:9pt; color:#999999; background-color:#FFFFFF(107,194,255); border-width:0px;" readonly>&nbsp;<a href="#" OnClick = "preTrack();" OnMouseOver="window.status=('Previous Track'); return true;" OnMouseOut="window.status=(''); return true;"><img src="forward.gif" border="0" align="middle" width="13" height="13"></a> 
+        <a href="#" OnClick = "stopTrack();" OnMouseOver="window.status=('Stop BGM'); return true;" OnMouseOut="window.status=(''); return true;"><img src="stop.gif" border="0" align="middle" width="13" height="13"></a> <a href="#" OnClick = "play();" OnMouseOver="window.status=('Play BGM'); return true;" OnMouseOut="window.status=(''); return true;"><img src="play.gif" border="0" align="middle" width="13" height="13"></a> 
+    <a href="#" OnCLick = "nextTrack();" OnMouseOver="window.status=('Next Track'); return true;" OnMouseOut="window.status=(''); return true;"><img src="backward.gif" border="0" align="middle" width="13" height="13"></a> <a href="#" OnClick = "m_list();" OnMouseOver="window.status=('Display the BGM List'); return true;" OnMouseOut="window.status=(''); return true;"><img src="list.gif" align="middle" border="0" width="28" height="13"></a></font></span></p>
+</form></div>
+</html>

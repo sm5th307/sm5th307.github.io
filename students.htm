@@ -1,0 +1,82 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<title>無標題文件</title><STYLE>
+<STYLE>
+BODY {
+SCROLLBAR-FACE-COLOR: #FFFFFF;
+ SCROLLBAR-HIGHLIGHT-COLOR: #999999;
+ SCROLLBAR-SHADOW-COLOR: #999999;
+ SCROLLBAR-3DLIGHT-COLOR: #FFFFFF;
+ SCROLLBAR-ARROW-COLOR: #999999;
+ SCROLLBAR-TRACK-COLOR: #FFFFFF;
+ SCROLLBAR-DARKSHADOW-COLOR: #FFFFFF;
+ SCROLLBAR-BASE-COLOR: #FFFFFF
+}
+</STYLE>
+<link href="css1.css" rel="stylesheet" type="text/css">
+</head>
+
+<body text="#999999" link="#999999" vlink="#999999" alink="#999999" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgproperties="fixed">
+<div id="Layer1" style="position:absolute; left:101px; top:88px; width:67px; height:13px; z-index:1"><font color="#FF0000" size="2">請輸入密碼 
+  </font></div>
+<!--密碼保護開始//-->
+<SCRIPT LANGUAGE="JavaScript1.2">
+<!--密碼正確時所出現的提示//-->
+var msg = "您輸入的密碼正確.";
+<!--密碼正確後所進入的網頁連結/-->
+var url = "students2.htm";
+
+function initArray() {
+	this.length = initArray.arguments.length;
+	for (var i = 0; i < this.length; i++) {
+		this[i] = initArray.arguments[i];
+	}
+}
+<!--在這裡可以設定密碼﹐該密碼是以ASCII碼來表示的﹐比如A為97﹐B為98﹐0為48等。//-->
+var password = new initArray(
+51,48,55
+);
+
+var pass_count=0;
+
+var cancel_key=27;
+if (document.layers)	document.captureEvents(Event.KEYPRESS)
+function backhome(e){
+	if (document.layers){
+	//if (navigator.appName == "Netscape"){
+		if (e.which==password[pass_count]) {
+			checkpassword();
+			//return false;
+		}
+		else {
+			pass_count=0;
+			//return false;
+		}
+	}
+	else if (document.all){
+		if (event.keyCode==password[pass_count]){
+			checkpassword();
+			//return false;
+		}
+		else {
+			pass_count=0;
+			//return false;
+		}
+				
+	}
+}
+
+
+document.onkeypress=backhome
+
+function checkpassword() {
+	pass_count++;
+	if(pass_count>=password.length)	{
+		if(confirm(msg))	window.location=url;
+	}
+}
+</SCRIPT>
+<!--密碼保護結束//--></body>
+</html>

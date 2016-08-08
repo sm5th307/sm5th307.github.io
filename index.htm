@@ -3,19 +3,6 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=big5">
 <title>三民917</title>
-<STYLE>
-<!--
-BODY {
-scrollbar-face-color:#000000;
-scrollbar-highlight-color:#FFFFFF;
-scrollbar-3dlight-color:#000000;
-scrollbar-darkshadow-color:#000000;
-scrollbar-shadow-color:#808080;
-scrollbar-arrow-color:#FFFFFF;
-scrollbar-track-color:#000000;
-}
--->
-</STYLE>
 <link href="css1.css" rel="stylesheet" type="text/css">
 <script language="JavaScript" type="text/JavaScript">
 <!--
@@ -89,10 +76,6 @@ function MM_timelineGoto(tmLnName, fNew, numGotos) { //v2.0
   if (tmLn.ID == 0) eval('MM_timelinePlay(tmLnName)');
 }
 
-function MM_openBrWindow(theURL,winName,features) { //v2.0
-  window.open(theURL,winName,features);
-}
-
 function MM_initTimelines() { //v4.0
     //MM_initTimelines() Copyright 1997 Macromedia, Inc. All rights reserved.
     var ns = navigator.appName == "Netscape";
@@ -113,17 +96,48 @@ function MM_initTimelines() { //v4.0
         document.MM_Time[i].delay = 1000/document.MM_Time[i].fps;
     }
 }
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
 //-->
 </script>
+<style type="text/css">
+<!--
+img {
+	cursor: help;
+}
+-->
+</style>
+<link href="css_scroll.css" rel="stylesheet" type="text/css">
 </head>
 
-<body bgcolor="#000000" text="#FFFFFF">
+<body bgcolor="#B4A492" text="#F2F0EC" onLoad="MM_preloadImages('images/307.jpg','images/307a.jpg')">
 <!--閃爍標題列語法開始處--->
-<div id="Layer4" style="position:absolute; left:569px; top:903px; width:75px; height:25px; z-index:4"><a href="http://www.24cc.com/count.asp?id=sm917"><img src="http://www.24cc.com/icon.asp?id=sm917" border=0></a></div>
-<div id="Layer5" style="position:absolute; left:141px; top:16px; width:370px; height:6px; z-index:5"><font size="2">如果您是XP或2000的使用者，連議您在進入前先安裝<a href="http://java.sun.com/webapps/download/AutoDL?BundleId=7140">Java虛擬器</a></font></div>
-<div id="Layer2" style="position:absolute; left:227px; top:46px; width:156px; height:11px; z-index:6"><font size="2">請使用<font color="#FFFFCC">1024x768</font>以上解析度</font></div>
-<div id="Layer1" style="position:absolute; left:0; top:0; width:269px; height:164px; z-index:1"><a href="#"><img src="images/307.jpg" width="590" height="827" border="0" onClick="MM_openBrWindow('framest.htm','self','toolbar=yes,scrollbars=yes,resizable=yes')"></a></div>
-<script language=javascript >
+<div id="Layer4" style="position:absolute; left:628px; top:810px; width:75px; height:25px; z-index:4"><a href="http://www.24cc.com/count.asp?id=sm917"><img src="http://www.24cc.com/icon.asp?id=sm917" border=0></a></div>
+<div id="Layer2" style="position:absolute; left:320px; top:2px; width:156px; height:11px; z-index:6"><font size="2">請使用<font color="#FFFFCC">1024x768</font>以上解析度</font></div>
+<div align="center" onClick="MM_preloadImages('images/307a.jpg')">
+  <a href="fr_a.htm"><img src="images/307.jpg" name="a307" width="590" height="827" border="0" id="a307" onMouseOver="MM_swapImage('未命名 &lt;img&gt;','','images/307.jpg','a307','','images/307a.jpg',1)" onMouseOut="MM_swapImgRestore()"></a>  
+  <script language=javascript >
 title_tmp1=document.title
 if (title_tmp1.indexOf(">>")!=-1){
 title_tmp2=title_tmp1.split(">>");
@@ -137,7 +151,7 @@ if (title_last==" —> "){title_last=" —> "};
 if (title_last==" —> "){title_last=" —> "};
 }
 }
-title_new="三民917" //修改標題列中間的文字
+title_new="三民高中307" //修改標題列中間的文字
 step=0
 function flash_title()
 {
@@ -153,11 +167,7 @@ setTimeout("flash_title()",180);
 }
 flash_title()
 </script>
-<!--閃爍標題列語法結束處--->
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p><font size="2">　　　　　</font></p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
+  <!--閃爍標題列語法結束處--->
+</div>
 </body>
 </html>

@@ -1,19 +1,19 @@
-a:link { color:#CCCCCC;text-decoration:none}
+a:link {
+	color: #F2F0EC;
+}
 a:visited {
-	color:#CCCCCC;
-	font-size:12px;
-	text-decoration: none;
+	color:#F2F0EC;
 }
 a:active {
-	text-decoration: none;
-	color: #CCCCCC;
+	color: #F2F0EC;
 
 }
 a:hover{
-		position:relative;
-		top:1px;
-		left:1px;
-		color:#CCCCCC; 
-		text-decoration:none;
-		font-weight: 500;
+	position:relative;
+	top:1px;
+	left:1px;
+	color:#F2F0EC;
+	text-decoration:none;
+	font-weight: 500;
+	border: 2px dashed #F2F0EC;
 		}

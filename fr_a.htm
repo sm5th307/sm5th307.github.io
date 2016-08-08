@@ -1,0 +1,56 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<title>無標題文件</title>
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+//-->
+</script>
+</head>
+<!--閃爍標題列語法開始處--->
+<script language=javascript >
+title_tmp1=document.title
+if (title_tmp1.indexOf(">>")!=-1){
+title_tmp2=title_tmp1.split(">>");
+title_last=" —> "+title_tmp2[1];
+title_last=title_last + " —> " + title_tmp2[2];
+}else{
+if (title_tmp1.indexOf("——")!=-1){
+title_tmp2=title_tmp1.split("——");
+title_last=" —> "+title_tmp2[1];
+if (title_last==" —> "){title_last=" —> "};
+if (title_last==" —> "){title_last=" —> "};
+}
+}
+title_new="３０７＠三民高中" //修改標題列中間的文字
+step=0
+function flash_title()
+{
+step++
+if (step==7) {step=1}
+if (step==1) {document.title='◆◇◇◇'+title_new+'◇◇◇◆'}
+if (step==2) {document.title='◇◆◇◇'+title_new+'◇◇◆◇'}
+if (step==3) {document.title='◇◇◆◇'+title_new+'◇◆◇◇'}
+if (step==4) {document.title='◇◇◇◆'+title_new+'◆◇◇◇'}
+if (step==5) {document.title='◇◇◆◇'+title_new+'◇◆◇◇'}
+if (step==6) {document.title='◇◆◇◇'+title_new+'◇◇◆◇'}
+setTimeout("flash_title()",180);
+}
+flash_title()
+</script>
+<!--閃爍標題列語法結束處--->
+<frameset rows="*,25" cols="*" framespacing="0"" frameborder="NO" border="0">
+  <frame src="fr_m.htm" name="topFrame" >
+  <frame src="exobud/exobud.htm" name="mainFrame">
+</frameset>
+<noframes><body>
+
+</body></noframes>
+</html>
